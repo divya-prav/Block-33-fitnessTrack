@@ -20,6 +20,18 @@ router.get('/:activityId/routines', async (req, res, next) => {
   }
 });
 
+//GET /api/activities/activityId
+
+router.get('/:activityId',async(req,res,next) => {
+  try{
+    const getActivity = await getActivityById(req.params.activityId);
+    res.send(getActivity);
+
+  }catch(error){
+    next(error); 
+  }
+})
+
 // GET /api/activities
 router.get('/', async (req, res, next) => {
   try {

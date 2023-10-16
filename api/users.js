@@ -8,6 +8,8 @@ const { JWT_SECRET = 'neverTell' } = process.env;
 // POST /api/users/login
 router.post('/login', async (req, res, next) => {
   const { username, password } = req.body;
+   console.log(username);
+   console.log(password);
 
   // request must have both
   if (!username || !password) {
